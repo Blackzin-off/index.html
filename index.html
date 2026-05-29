@@ -35,7 +35,6 @@
             z-index: -1;
         }
 
-        /* NAVBAR */
         header {
             background: rgba(0, 0, 0, 0.95);
             backdrop-filter: blur(20px);
@@ -97,14 +96,12 @@
             width: 100%;
         }
 
-        /* MAIN */
         main {
             max-width: 1200px;
             margin: 0 auto;
             padding: 3rem 2rem;
         }
 
-        /* HEADER SECTION */
         .header-curriculum {
             text-align: center;
             margin-bottom: 4rem;
@@ -150,7 +147,6 @@
             color: #ffffff;
         }
 
-        /* SECTIONS */
         .curriculum-section {
             margin-bottom: 3rem;
             padding-bottom: 2rem;
@@ -169,7 +165,6 @@
             position: relative;
         }
 
-        /* CONTENT CARDS */
         .content-item {
             background: rgba(16, 185, 129, 0.1);
             border: 1px solid #10b981;
@@ -226,7 +221,6 @@
             line-height: 1.7;
         }
 
-        /* SKILLS GRID */
         .skills-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -285,7 +279,6 @@
             border-color: #10b981;
         }
 
-        /* ABOUT SECTION */
         .about-box {
             background: rgba(16, 185, 129, 0.1);
             border: 1px solid #10b981;
@@ -314,7 +307,6 @@
             font-size: 0.9rem;
         }
 
-        /* PRINT BUTTON */
         .print-btn {
             position: fixed;
             bottom: 2rem;
@@ -337,7 +329,6 @@
             background: #34d399;
         }
 
-        /* ANIMAÇÕES */
         @keyframes slideInDown {
             from {
                 opacity: 0;
@@ -360,7 +351,6 @@
             }
         }
 
-        /* RESPONSIVO */
         @media (max-width: 768px) {
             .header-curriculum h1 {
                 font-size: 2rem;
@@ -464,7 +454,6 @@
     </header>
 
     <main>
-        <!-- HEADER -->
         <div class="header-curriculum">
             <h1>Erivaldo de Sousa</h1>
             <p class="subtitle">Estudante de Análise e Desenvolvimento de Sistemas</p>
@@ -475,7 +464,6 @@
             </div>
         </div>
 
-        <!-- SOBRE MIM -->
         <section class="curriculum-section" id="sobre">
             <h2 class="section-title">Sobre Mim</h2>
             <div class="about-box">
@@ -484,7 +472,6 @@
             </div>
         </section>
 
-        <!-- FORMAÇÃO ACADÊMICA -->
         <section class="curriculum-section" id="formacao">
             <h2 class="section-title">Formação Acadêmica</h2>
             
@@ -504,7 +491,6 @@
             </div>
         </section>
 
-        <!-- HABILIDADES TÉCNICAS -->
         <section class="curriculum-section" id="habilidades">
             <h2 class="section-title">Habilidades Técnicas</h2>
             
@@ -551,7 +537,6 @@
             </div>
         </section>
 
-        <!-- EXPERIÊNCIAS / PROJETOS -->
         <section class="curriculum-section">
             <h2 class="section-title">Projetos de Estudo</h2>
 
@@ -598,7 +583,6 @@
             </div>
         </section>
 
-        <!-- DIFERENCIAIS -->
         <section class="curriculum-section">
             <h2 class="section-title">Diferenciais</h2>
 
@@ -634,7 +618,6 @@
             </div>
         </section>
 
-        <!-- CONTATO -->
         <section class="curriculum-section" id="contato">
             <h2 class="section-title">Entre em Contato</h2>
 
@@ -646,9 +629,6 @@
                 <div class="contact-header">
                     <a href="tel:6299359627">☎️ Ligar</a>
                     <a href="mailto:erivaldo_1@outlook.com">📧 Email</a>
-                    <a href="https://linkedin.com" target="_blank">💼 LinkedIn</a>
-                    <a href="https://github.com" target="_blank">🐙 GitHub</a>
-                </div>
             </div>
         </section>
     </main>
@@ -661,7 +641,6 @@
     <button class="print-btn" onclick="window.print()">🖨️ Imprimir/Salvar PDF</button>
 
     <script>
-        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
