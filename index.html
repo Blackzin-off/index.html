@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erivaldo de Sousa - Currículo Online</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #000000;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* NAVBAR */
+        header {
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 2px solid #10b981;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #10b981;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #10b981;
+            transition: width 0.3s;
+        }
+
+        nav a:hover {
+            color: #10b981;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* MAIN */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* HEADER SECTION */
+        .header-curriculum {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #10b981;
+            animation: slideInDown 0.8s ease;
+        }
+
+        .header-curriculum h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: #10b981;
+        }
+
+        .header-curriculum .subtitle {
+            font-size: 1.2rem;
+            color: #34d399;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .contact-header {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+        }
+
+        .contact-header a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-header a:hover {
+            color: #10b981;
+        }
+
+        .contact-header span {
+            color: #ffffff;
+        }
+
+        /* SECTIONS */
+        .curriculum-section {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #10b981;
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #10b981;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 3px solid #10b981;
+            display: inline-block;
+            position: relative;
+        }
+
+        /* CONTENT CARDS */
+        .content-item {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid #10b981;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .content-item:nth-child(1) { animation-delay: 0s; }
+        .content-item:nth-child(2) { animation-delay: 0.1s; }
+        .content-item:nth-child(3) { animation-delay: 0.2s; }
+
+        .content-item:hover {
+            border-color: #34d399;
+            background: rgba(16, 185, 129, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2);
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 0.8rem;
+        }
+
+        .item-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .item-meta {
+            color: #999999;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .item-time {
+            color: #10b981;
+            font-weight: 600;
+            font-size: 0.9rem;
+            background: rgba(16, 185, 129, 0.2);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+        }
+
+        .item-description {
+            color: #cccccc;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        /* SKILLS GRID */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-box {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid #10b981;
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .skill-box:nth-child(1) { animation-delay: 0s; }
+        .skill-box:nth-child(2) { animation-delay: 0.1s; }
+        .skill-box:nth-child(3) { animation-delay: 0.2s; }
+        .skill-box:nth-child(4) { animation-delay: 0.3s; }
+
+        .skill-box:hover {
+            border-color: #34d399;
+            background: rgba(16, 185, 129, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2);
+        }
+
+        .skill-category-title {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            color: #10b981;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .skill-tag {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+            padding: 0.4rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid #10b981;
+            transition: all 0.3s;
+        }
+
+        .skill-tag:hover {
+            background: #10b981;
+            color: #000000;
+            border-color: #10b981;
+        }
+
+        /* ABOUT SECTION */
+        .about-box {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid #10b981;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .about-box p {
+            color: #cccccc;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .about-box p:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+
+        /* FOOTER */
+        footer {
+            background: rgba(0, 0, 0, 0.95);
+            border-top: 2px solid #10b981;
+            padding: 2rem;
+            text-align: center;
+            color: #999999;
+            font-size: 0.9rem;
+        }
+
+        /* PRINT BUTTON */
+        .print-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #10b981;
+            color: #000000;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .print-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(16, 185, 129, 0.5);
+            background: #34d399;
+        }
+
+        /* ANIMAÇÕES */
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 768px) {
+            .header-curriculum h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.4rem;
+            }
+
+            .contact-header {
+                flex-direction: column;
+                gap: 0.8rem;
+                font-size: 0.9rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .item-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            main {
+                padding: 1rem;
+            }
+
+            .print-btn {
+                bottom: 1rem;
+                right: 1rem;
+                padding: 0.7rem 1.2rem;
+                font-size: 0.85rem;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media print {
+            header, .print-btn, nav {
+                display: none;
+            }
+
+            body {
+                background: white;
+                color: black;
+            }
+
+            body::before {
+                display: none;
+            }
+
+            .content-item, .skill-box {
+                border: 1px solid #10b981;
+                background: white;
+                page-break-inside: avoid;
+            }
+
+            main {
+                padding: 0;
+            }
+
+            .section-title {
+                color: #10b981;
+            }
+
+            .item-time, .skill-category-title, .section-title {
+                color: #10b981;
+            }
+
+            .skill-tag {
+                background: white;
+                border: 1px solid #10b981;
+                color: #10b981;
+            }
+
+            .item-description {
+                color: black;
+            }
+
+            .about-box p {
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">ES</div>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#formacao">Formação</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HEADER -->
+        <div class="header-curriculum">
+            <h1>Erivaldo de Sousa</h1>
+            <p class="subtitle">Estudante de Análise e Desenvolvimento de Sistemas</p>
+            <div class="contact-header">
+                <a href="tel:6299359627">📱 (62) 9 9359-6272</a>
+                <a href="mailto:erivaldo_1@outlook.com">📧 erivaldo_1@outlook.com</a>
+                <span>📍 Goiás, Brasil</span>
+            </div>
+        </div>
+
+        <!-- SOBRE MIM -->
+        <section class="curriculum-section" id="sobre">
+            <h2 class="section-title">Sobre Mim</h2>
+            <div class="about-box">
+                <p>Estudante de Análise e Desenvolvimento de Sistemas (3º período na UniGoiás) em busca da primeira oportunidade de estágio. Tenho forte vontade de aprender e meu principal objetivo é aplicar na prática os conceitos que absorvo na faculdade, contribuindo para a equipe enquanto evoluo profissionalmente.</p>
+                <p>Perfil flexível e adaptável a trabalhos individuais e em dinâmicas de equipe. Sempre aberto a novos desafios e aprendo rapidamente com as demandas que surgem.</p>
+            </div>
+        </section>
+
+        <!-- FORMAÇÃO ACADÊMICA -->
+        <section class="curriculum-section" id="formacao">
+            <h2 class="section-title">Formação Acadêmica</h2>
+            
+            <div class="content-item">
+                <div class="item-header">
+                    <div>
+                        <p class="item-title">Análise e Desenvolvimento de Sistemas (ADS)</p>
+                        <p class="item-meta">Universidade Estadual de Goiás (UniGoiás)</p>
+                    </div>
+                    <span class="item-time">3º Período (Cursando)</span>
+                </div>
+                <p class="item-description">
+                    Cursando o terceiro período do curso superior em Análise e Desenvolvimento de Sistemas. 
+                    Estudando disciplinas fundamentais como Programação (Java, C), Banco de Dados, Sistemas Operacionais (Linux), 
+                    Mapeamento de Processos e Análise de Sistemas.
+                </p>
+            </div>
+        </section>
+
+        <!-- HABILIDADES TÉCNICAS -->
+        <section class="curriculum-section" id="habilidades">
+            <h2 class="section-title">Habilidades Técnicas</h2>
+            
+            <div class="skills-container">
+                <div class="skill-box">
+                    <p class="skill-category-title">🗄️ Banco de Dados</p>
+                    <div class="skill-list">
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">PgAdmin</span>
+                        <span class="skill-tag">Modelagem</span>
+                    </div>
+                </div>
+
+                <div class="skill-box">
+                    <p class="skill-category-title">💻 Desenvolvimento</p>
+                    <div class="skill-list">
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">C</span>
+                        <span class="skill-tag">Lógica</span>
+                        <span class="skill-tag">POO</span>
+                    </div>
+                </div>
+
+                <div class="skill-box">
+                    <p class="skill-category-title">📊 Processos & Análise</p>
+                    <div class="skill-list">
+                        <span class="skill-tag">BPM</span>
+                        <span class="skill-tag">Fluxogramas</span>
+                        <span class="skill-tag">Análise</span>
+                        <span class="skill-tag">Documentação</span>
+                    </div>
+                </div>
+
+                <div class="skill-box">
+                    <p class="skill-category-title">🐧 Infraestrutura</p>
+                    <div class="skill-list">
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">Ubuntu Server</span>
+                        <span class="skill-tag">Terminal</span>
+                        <span class="skill-tag">Shell</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIÊNCIAS / PROJETOS -->
+        <section class="curriculum-section">
+            <h2 class="section-title">Projetos de Estudo</h2>
+
+            <div class="content-item">
+                <div class="item-header">
+                    <div>
+                        <p class="item-title">Sistema de Gerenciamento de Estoque</p>
+                        <p class="item-meta">Disciplina: Programação em Java</p>
+                    </div>
+                    <span class="item-time">2024</span>
+                </div>
+                <p class="item-description">
+                    Desenvolvimento de uma aplicação desktop para gerenciamento de estoque usando Java. 
+                    Implementação de CRUD, validações de dados e interface gráfica com Swing.
+                </p>
+            </div>
+
+            <div class="content-item">
+                <div class="item-header">
+                    <div>
+                        <p class="item-title">Banco de Dados para Empresa Fictícia</p>
+                        <p class="item-meta">Disciplina: Banco de Dados</p>
+                    </div>
+                    <span class="item-time">2024</span>
+                </div>
+                <p class="item-description">
+                    Modelagem e implementação de um banco de dados relacional usando PostgreSQL e PgAdmin. 
+                    Documentação das tabelas, relacionamentos e otimização de queries SQL.
+                </p>
+            </div>
+
+            <div class="content-item">
+                <div class="item-header">
+                    <div>
+                        <p class="item-title">Análise e Mapeamento de Processos</p>
+                        <p class="item-meta">Disciplina: Mapeamento de Processos</p>
+                    </div>
+                    <span class="item-time">2024</span>
+                </div>
+                <p class="item-description">
+                    Análise completa de processos empresariais, criação de fluxogramas detalhados e 
+                    documentação de processos com propostas de otimização e melhoria de eficiência.
+                </p>
+            </div>
+        </section>
+
+        <!-- DIFERENCIAIS -->
+        <section class="curriculum-section">
+            <h2 class="section-title">Diferenciais</h2>
+
+            <div class="skills-container">
+                <div class="skill-box">
+                    <p class="skill-category-title">Soft Skills</p>
+                    <div class="skill-list">
+                        <span class="skill-tag">Comunicação</span>
+                        <span class="skill-tag">Teamwork</span>
+                        <span class="skill-tag">Proatividade</span>
+                        <span class="skill-tag">Flexibilidade</span>
+                    </div>
+                </div>
+
+                <div class="skill-box">
+                    <p class="skill-category-title">Características</p>
+                    <div class="skill-list">
+                        <span class="skill-tag">Rápido aprendizado</span>
+                        <span class="skill-tag">Dedicado</span>
+                        <span class="skill-tag">Responsável</span>
+                        <span class="skill-tag">Engajado</span>
+                    </div>
+                </div>
+
+                <div class="skill-box">
+                    <p class="skill-category-title">Disponibilidade</p>
+                    <div class="skill-list">
+                        <span class="skill-tag">Imediata</span>
+                        <span class="skill-tag">Flexível</span>
+                        <span class="skill-tag">Mobilidade</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTATO -->
+        <section class="curriculum-section" id="contato">
+            <h2 class="section-title">Entre em Contato</h2>
+
+            <div class="about-box">
+                <p style="text-align: center; margin-bottom: 1.5rem;">
+                    Estou disponível para conversar sobre oportunidades de estágio e novos desafios. 
+                    Sinta-se livre para entrar em contato através dos canais abaixo:
+                </p>
+                <div class="contact-header">
+                    <a href="tel:6299359627">☎️ Ligar</a>
+                    <a href="mailto:erivaldo_1@outlook.com">📧 Email</a>
+                    <a href="https://linkedin.com" target="_blank">💼 LinkedIn</a>
+                    <a href="https://github.com" target="_blank">🐙 GitHub</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Erivaldo de Sousa - Todos os direitos reservados</p>
+        <p>Currículo Online | Disponível para estágio</p>
+    </footer>
+
+    <button class="print-btn" onclick="window.print()">🖨️ Imprimir/Salvar PDF</button>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
