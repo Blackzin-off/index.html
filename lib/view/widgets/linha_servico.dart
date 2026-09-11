@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../theme/tema_app.dart';
 
 class LinhaServico extends StatelessWidget {

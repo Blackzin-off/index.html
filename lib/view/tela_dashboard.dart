@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../model/usuario.dart';
 import 'theme/tema_app.dart';
 import 'widgets/cartao_estatistica.dart';

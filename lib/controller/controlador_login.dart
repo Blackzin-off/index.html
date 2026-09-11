@@ -5,8 +5,8 @@ class ControladorLogin {
   static const _senhaCadastrada = 'da.10.ai.tia';
   static const _usuarioLogado = Usuario(
     matricula: 'OF-00231',
-    nome: 'Rafael Carvalho',
-    cargo: 'Mecânico Chefe',
+    nome: 'Rei-Delas',
+    cargo: 'Um cara muito importante',
   );
 
   Usuario? autenticar(String usuario, String senha) {
