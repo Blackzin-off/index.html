@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../model/servico.dart';
 import '../theme/tema_app.dart';
 
+/// Card de uma ordem de serviço no quadro de Serviços.
 class CartaoServico extends StatelessWidget {
   final Servico servico;
   const CartaoServico({super.key, required this.servico});
@@ -18,7 +19,7 @@ class CartaoServico extends StatelessWidget {
         children: [
           Row(
             children: [
-              Expanded(child: Text('${servico.veiculo} · ${servico.placa}', style: const TextStyle(color: Cores.cinza, fontSize: 11))),
+              Expanded(child: Text('${servico.veiculo} · ${servico.placa}', style: const TextStyle(color: Cores.cinza, fontSize: 11), overflow: TextOverflow.ellipsis)),
               if (servico.prioridade == 'Alta')
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
@@ -29,6 +30,8 @@ class CartaoServico extends StatelessWidget {
           ),
           const SizedBox(height: 6),
           Text(servico.descricao, style: const TextStyle(color: Cores.creme, fontSize: 14, fontWeight: FontWeight.bold)),
+          const SizedBox(height: 4),
+          Text(servico.detalhe, style: const TextStyle(color: Cores.cinza, fontSize: 12)),
           const SizedBox(height: 8),
           Row(
             children: [
