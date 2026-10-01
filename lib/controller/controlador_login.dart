@@ -5,7 +5,7 @@ class ControladorLogin {
   static const _senhaCadastrada = 'da.10.ai.tia';
   static const _usuarioLogado = Usuario(
     matricula: 'OF-00231',
-    nome: 'Rei-Delas',
+    nome: 'O milhorzin',
     cargo: 'Um cara muito importante',
   );
 
