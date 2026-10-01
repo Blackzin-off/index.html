@@ -1,13 +1,13 @@
 import '../model/usuario.dart';
 
 class ControladorLogin {
-  static const _usuarioCadastrado = 'OF-00231';
-  static const _senhaCadastrada = 'senha123';
+  static const _usuarioCadastrado = 'erizin';
+  static const _senhaCadastrada = 'da.10.tia';
   static const _usuarioLogado = Usuario(
     matricula: 'OF-00231',
-    nome: 'Rafael Carvalho',
-    cargo: 'Mecânico Chefe',
-    email: 'rafael.carvalho@avantgarde.com',
+    nome: 'Erivaldo Sousa',
+    cargo: 'Um cara importante ai',
+    email: 'eri.sousa@avantgarde.com',
     telefone: '(11) 98221-4470',
     desde: 'Março de 2021',
   );
